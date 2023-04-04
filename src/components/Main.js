@@ -1,3 +1,5 @@
+import "./Main.css"
+
 function Main(){
 
     const moviesArray = [
@@ -21,8 +23,13 @@ function Main(){
 
     return(
         <div className="Main">
-            {moviesArray.forEach( movieObj => {
-                return <p>Does it work ???</p>
+            {moviesArray.map( (movieObj) => {
+                return(
+                    <div key={movieObj.id} className="card">
+                        <p>{movieObj.title}</p>
+                        <p>Rating: {movieObj.rating}</p>
+                    </div>
+                );
             })}
         </div>
     )
